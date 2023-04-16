@@ -1,0 +1,17 @@
+`timescale 1ns / 1ps
+
+module sync_up_down_counter(clk,reset,count,UP_down
+
+    );
+    input clk,reset,UP_down;
+    output reg [3:0]count;
+    always@(posedge clk)
+    begin
+        if(reset)
+            count <= 4'b0000;
+        else if(UP_down)
+            count <= count + 1;
+        else
+            count <= count - 1;
+    end
+endmodule
